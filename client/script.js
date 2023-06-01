@@ -47,7 +47,7 @@ function chatStripe (isAi, value, uniqueId){
          <div class="chat">
             <div class="profile">
              <img
-              src ="${isAi ? bot : user}"
+              src =${isAi ? bot : user}
               alt="${isAi ? 'bot' : 'user'}"
              />  
             </div>
@@ -80,7 +80,7 @@ const handleSubmit = async (e) => {
 
     //fetch data from server -> bot's message
 
-    const response = await fetch('https://aicompanion.onrender.com', {
+    const response = await fetch('https://aicompanion.onrender.com/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -91,7 +91,7 @@ const handleSubmit = async (e) => {
     })
 
     clearInterval(loadInterval);
-    messageDiv.innerHTML = '';
+    messageDiv.innerHTML = " ";
 
     if(response.ok){
       const data = await response.json();
